@@ -1,0 +1,29 @@
+  * {
+    box-sizing: content-box;
+    padding:0;
+    margin:0;
+  }
+  
+  
+  body {
+    background:whitesmoke;
+    display:flex;
+    min-height:100vh;
+    justify-content:center;
+    align-items:center;
+ }
+
+ h1 , h2, h3 {
+    text-align:center;
+ }
+
+ ol {
+    list-style:none;
+    text-align:center;
+    padding:1rem;
+ }
+
+ ol li {
+    
+    padding:.2rem;
+ }

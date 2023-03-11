@@ -6,12 +6,17 @@ const GifApp = () => {
 
     const [categories, setCategories] = useState(['One Punch', 'Dragon Ball'])
 
+    const handleAddCategory = () => {
+        setCategories((cat) => [...cat, 'Pokemon'] )
+    }
+
 
   return (
     <>
     {/* title */}
     <h1>Gif App</h1>
     {/* input  */}
+    <button onClick={handleAddCategory}>Add new</button>
     {/*  list grid  */}
     <ol>
         {categories.length > 0 ? categories.map((categorie, i) => (

@@ -1,13 +1,15 @@
 import { useState } from 'react'
+import { NewCategory } from './components/NewCategory'
 
 const gifApiKey = 'uIwcIRsHBQdzNI2DuE3GoqIydxwAqFD3'
 
 const GifApp = () => {
 
-    const [categories, setCategories] = useState(['One Punch', 'Dragon Ball'])
+    const [categories, setCategories] = useState([])
 
-    const handleAddCategory = () => {
-        setCategories((cat) => [...cat, 'Pokemon'] )
+    const onAddCategory = ( newCategory ) => {
+        if ( categories.includes( newCategory )) return
+        setCategories((cat) => [newCategory, ...cat])
     }
 
 
@@ -16,11 +18,12 @@ const GifApp = () => {
     {/* title */}
     <h1>Gif App</h1>
     {/* input  */}
-    <button onClick={handleAddCategory}>Add new</button>
+    < NewCategory onAddCategory={newCategory => onAddCategory(newCategory)}/>
+    
     {/*  list grid  */}
     <ol>
-        {categories.length > 0 ? categories.map((categorie, i) => (
-            <li key={categorie[i]}>{categorie}</li>
+        {categories.length > 0 ? categories.map((categorie) => (
+            <li key={categorie}>{categorie}</li>
         )) : <p>There aren't any categories yet</p>}
     </ol>
       {/* list item */}

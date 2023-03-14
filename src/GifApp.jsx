@@ -1,11 +1,10 @@
 import { useState } from 'react'
 import { NewCategory, GifGrid } from './components'
 
-
-
 const GifApp = () => {
 
     const [categories, setCategories] = useState(['The office'])
+
 
     const onAddCategory = (newCategory) => {
         if (categories.includes(newCategory)) return

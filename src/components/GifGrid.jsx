@@ -10,15 +10,16 @@ const GifGrid = ({ category }) => {
     const { img, isLoading } = useFetchGifs(category)
     
     return (
-        <div style={{paddingTop:'3rem'}}>
-        {isLoading && <h2>loading</h2>}
-        <h2>{category.toUpperCase()}</h2>
+        <>
+        <h3>{category}</h3>
+        {isLoading && (<h2>loading...</h2>)}
+        
             {<div className='card-grid'>
                 {img.length > 0 && img.map((gif) => (
                     < GifCard key={gif.id} {...gif} />
                 ))}
             </div>}
-        </div>
+        </>
     )
 }
 

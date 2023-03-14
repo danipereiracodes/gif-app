@@ -29,7 +29,7 @@ describe('<NewCategory /> component testing ', () => {
 
         fireEvent.input( input, { target: { value: inputValue}} )
         fireEvent.submit( form )
-        console.log(input.value);
+       
 
         expect( input.value ).toBe('')
         expect( onAddCategory ).toHaveBeenCalledTimes(1)
